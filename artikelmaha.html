@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="id" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pemerhati Lingkungan Ciambar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet">
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    .font-heading {
+      font-family: 'Merriweather', serif;
+    }
+    .font-body {
+      font-family: 'Open Sans', sans-serif;
+    }
+    .photo-placeholder {
+      border: 3px dashed #94a3b8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      min-height: 200px;
+      transition: all 0.3s ease;
+    }
+    .photo-placeholder:hover {
+      border-color: #22c55e;
+      background: #f0fdf4;
+    }
+    .nav-link {
+      transition: all 0.2s ease;
+    }
+    .nav-link:hover {
+      transform: translateY(-2px);
+    }
+    .article-card {
+      transition: all 0.3s ease;
+    }
+    .article-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+    }
+    html, body {
+      height: 100%;
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full font-body">
+  <div id="app" class="min-h-full w-full bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50"><!-- Header -->
+   <header class="bg-gradient-to-r from-emerald-700 via-green-600 to-teal-600 text-white shadow-lg">
+    <div class="max-w-5xl mx-auto px-4 py-4">
+     <div class="flex items-center justify-between flex-wrap gap-4">
+      <div class="flex items-center gap-3">
+       <div class="text-4xl">
+        🌿
+       </div>
+       <div>
+        <h1 id="site-title" class="font-heading text-xl md:text-2xl font-bold">Pemerhati Lingkungan Ciambar</h1>
+        <p class="text-emerald-100 text-sm">Peduli Lingkungan, Peduli Masa Depan</p>
+       </div>
+      </div>
+      <nav class="flex gap-2 text-sm"><button onclick="showPage('beranda')" class="nav-link px-3 py-2 rounded-lg bg-white/20 hover:bg-white/30">🏠 Beranda</button> <button onclick="showPage('artikel')" class="nav-link px-3 py-2 rounded-lg bg-white/20 hover:bg-white/30">📚 Artikel</button>
+      </nav>
+     </div>
+    </div>
+   </header><!-- Main Content -->
+   <main class="max-w-5xl mx-auto px-4 py-6"><!-- BERANDA -->
+    <section id="page-beranda" class="space-y-6">
+     <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+      <div class="flex flex-col md:flex-row gap-6 items-center">
+       <div class="w-32 h-32 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center text-6xl shadow-lg">
+        👩‍🎓
+       </div>
+       <div class="text-center md:text-left">
+        <h2 class="font-heading text-2xl font-bold text-emerald-800 mb-2">Profil Pemerhati Lingkungan</h2>
+        <p id="author-display" class="text-xl text-emerald-600 font-semibold mb-3">Maharani Sri R.S</p>
+        <p class="text-gray-600 leading-relaxed">Saya adalah seorang pelajar dari Ciambar yang peduli terhadap kondisi lingkungan sekitar. Melalui website ini, saya ingin berbagi pengamatan tentang berbagai masalah pencemaran yang terjadi di lingkungan kita dan mengajak masyarakat untuk bersama-sama menjaga kelestarian alam.</p>
+       </div>
+      </div>
+     </div>
+     <div class="bg-gradient-to-r from-amber-100 to-orange-100 rounded-2xl p-6 border-l-4 border-amber-500">
+      <h3 class="font-heading text-lg font-bold text-amber-800 mb-2">🎯 Misi Kami</h3>
+      <p class="text-amber-900">Meningkatkan kesadaran masyarakat Ciambar tentang pentingnya menjaga lingkungan melalui edukasi dan dokumentasi nyata tentang pencemaran yang terjadi di sekitar kita.</p>
+     </div>
+     <div class="grid md:grid-cols-3 gap-4">
+      <div class="bg-white rounded-xl p-4 shadow text-center">
+       <div class="text-3xl mb-2">
+        💨
+       </div>
+       <h4 class="font-semibold text-gray-800">Polusi Udara</h4>
+       <p class="text-sm text-gray-600">Pembakaran sampah sembarangan</p>
+      </div>
+      <div class="bg-white rounded-xl p-4 shadow text-center">
+       <div class="text-3xl mb-2">
+        🗑️
+       </div>
+       <h4 class="font-semibold text-gray-800">Pencemaran Tanah</h4>
+       <p class="text-sm text-gray-600">Sampah yang dibuang sembarangan</p>
+      </div>
+      <div class="bg-white rounded-xl p-4 shadow text-center">
+       <div class="text-3xl mb-2">
+        💧
+       </div>
+       <h4 class="font-semibold text-gray-800">Pencemaran Air</h4>
+       <p class="text-sm text-gray-600">Genangan air di jalanan</p>
+      </div>
+     </div>
+     <div class="text-center"><button onclick="showPage('artikel')" class="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-xl font-semibold shadow-lg transition-all hover:scale-105"> 📖 Baca Artikel Lengkap </button>
+     </div>
+    </section><!-- DAFTAR ARTIKEL -->
+    <section id="page-artikel" class="space-y-6 hidden">
+     <h2 class="font-heading text-2xl font-bold text-emerald-800 text-center">📚 Daftar Artikel</h2>
+     <div class="grid gap-4"><!-- Artikel 1 -->
+      <div onclick="showArticle(1)" class="article-card bg-white rounded-xl p-5 shadow-lg cursor-pointer border-l-4 border-red-400">
+       <div class="flex gap-4 items-start">
+        <div class="text-4xl">
+         💨
+        </div>
+        <div class="flex-1">
+         <h3 class="font-heading text-lg font-bold text-gray-800 mb-1">Bahaya Pembakaran Sampah Bagi Kesehatan dan Lingkungan</h3>
+         <p class="text-sm text-gray-500 mb-2">📍 Ciambar | 📅 Kamis, 5 Februari 2026 | ✍️ Maharani Sri R.S</p>
+         <p class="text-gray-600 text-sm">Pembakaran sampah yang sering dilakukan warga tanpa menyadari dampak buruknya bagi kesehatan dan kualitas udara...</p>
+        </div>
+       </div>
+      </div><!-- Artikel 2 -->
+      <div onclick="showArticle(2)" class="article-card bg-white rounded-xl p-5 shadow-lg cursor-pointer border-l-4 border-amber-400">
+       <div class="flex gap-4 items-start">
+        <div class="text-4xl">
+         🗑️
+        </div>
+        <div class="flex-1">
+         <h3 class="font-heading text-lg font-bold text-gray-800 mb-1">Dampak Membuang Sampah Sembarangan Terhadap Tanah</h3>
+         <p class="text-sm text-gray-500 mb-2">📍 Ciambar | 📅 Kamis, 5 Februari 2026 | ✍️ Maharani Sri R.S</p>
+         <p class="text-gray-600 text-sm">Kebiasaan buruk membuang sampah sembarangan yang merusak kesuburan tanah dan mencemari lingkungan sekitar...</p>
+        </div>
+       </div>
+      </div><!-- Artikel 3 -->
+      <div onclick="showArticle(3)" class="article-card bg-white rounded-xl p-5 shadow-lg cursor-pointer border-l-4 border-blue-400">
+       <div class="flex gap-4 items-start">
+        <div class="text-4xl">
+         💧
+        </div>
+        <div class="flex-1">
+         <h3 class="font-heading text-lg font-bold text-gray-800 mb-1">Genangan Air di Jalanan: Tanda Pencemaran dan Masalah Drainase</h3>
+         <p class="text-sm text-gray-500 mb-2">📍 Ciambar | 📅 Kamis, 5 Februari 2026 | ✍️ Maharani Sri R.S</p>
+         <p class="text-gray-600 text-sm">Genangan air yang sering ditemui di jalanan akibat sistem drainase tersumbat sampah dan kurangnya kesadaran warga...</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section><!-- DETAIL ARTIKEL 1 - POLUSI UDARA -->
+    <article id="article-1" class="hidden"><button onclick="showPage('artikel')" class="mb-4 text-emerald-600 hover:text-emerald-800 font-semibold">← Kembali ke Daftar Artikel</button>
+     <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+      <div class="bg-gradient-to-r from-red-500 to-orange-500 p-6 text-white"><span class="text-5xl">💨</span>
+       <h1 class="font-heading text-2xl font-bold mt-3">Bahaya Pembakaran Sampah Bagi Kesehatan dan Lingkungan</h1>
+       <div class="flex flex-wrap gap-4 mt-3 text-sm text-red-100"><span>✍️ Maharani Sri R.S</span> <span>📍 Ciambar</span> <span>📅 kamis, 5 Februari 2026</span>
+       </div>
+      </div>
+      <div class="p-6 space-y-4 text-gray-700 leading-relaxed"><!-- Tempat Foto -->
+       <img
+       src="c:\Users\DEMEN\Desktop\ARTIKELIPAS\img\pembakaran.jpg.jpeg"
+       alt="Foto Pembakaran Sampah"
+       class="w-full h-96 object-cover rounded-xl"
+       />
+       <p class="first-letter:text-4xl first-letter:font-bold first-letter:text-red-600 first-letter:float-left first-letter:mr-2">Polusi udara merupakan salah satu masalah lingkungan yang sering kali diabaikan oleh masyarakat, padahal dampaknya sangat berbahaya bagi kesehatan manusia dan kelestarian lingkungan. Di daerah Ciambar, saya mengamati bahwa kebiasaan membakar sampah masih sangat umum dilakukan oleh warga, terutama di pekarangan rumah dan lahan kosong. Banyak warga yang menganggap pembakaran sampah sebagai cara paling mudah dan praktis untuk menghilangkan tumpukan sampah rumah tangga, tanpa menyadari bahaya yang ditimbulkan.</p>
+       <p>Berdasarkan pengamatan yang saya lakukan di lingkungan sekitar rumah di Ciambar, hampir setiap sore hari terlihat asap mengepul dari berbagai titik akibat pembakaran sampah. Sampah yang dibakar tidak hanya berupa daun kering atau ranting pohon, tetapi juga sampah plastik, styrofoam, dan bahan-bahan sintetis lainnya yang sangat berbahaya ketika dibakar. Asap hitam pekat yang dihasilkan dari pembakaran sampah plastik mengandung zat-zat beracun seperti dioksin, furan, dan karbon monoksida yang sangat berbahaya jika terhirup oleh manusia.</p>
+       <p>Dampak dari pembakaran sampah ini sangat nyata dirasakan oleh warga sekitar. Banyak yang mengeluhkan sesak napas, batuk-batuk, dan iritasi mata ketika asap pembakaran sampah menyebar ke pemukiman. Anak-anak dan lansia menjadi kelompok yang paling rentan terhadap dampak buruk polusi udara ini. Selain itu, asap pembakaran sampah juga berkontribusi terhadap pemanasan global karena menghasilkan gas rumah kaca yang terperangkap di atmosfer bumi.</p>
+       <p>Tidak hanya berdampak pada kesehatan, pembakaran sampah juga merusak kualitas tanah dan air di sekitarnya. Abu sisa pembakaran yang mengandung zat berbahaya dapat meresap ke dalam tanah dan mencemari sumber air tanah. Hal ini tentu sangat mengkhawatirkan mengingat banyak warga Ciambar yang masih mengandalkan air sumur untuk kebutuhan sehari-hari. Dampak jangka panjang dari pencemaran ini bisa sangat serius dan sulit untuk dipulihkan.</p>
+       <p>Fenomena pembakaran sampah ini sebenarnya terjadi karena kurangnya fasilitas pengelolaan sampah yang memadai dan rendahnya kesadaran masyarakat tentang bahaya pembakaran sampah. Banyak warga yang tidak memiliki akses ke tempat pembuangan sampah yang layak, sehingga memilih jalan pintas dengan membakar sampah di pekarangan. Selain itu, sosialisasi tentang dampak buruk pembakaran sampah juga masih sangat minim dilakukan oleh pihak terkait.</p>
+       <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded-r-xl">
+        <h3 class="font-heading font-bold text-green-800 mb-2">🌱 Ajakan dan Solusi untuk Masyarakat:</h3>
+        <ul class="list-disc list-inside space-y-1 text-green-900">
+         <li>Hentikan kebiasaan membakar sampah dan mulai memilah sampah organik dan anorganik</li>
+         <li>Sampah organik bisa dijadikan kompos untuk menyuburkan tanaman</li>
+         <li>Sampah anorganik seperti plastik dan kertas bisa dikumpulkan untuk didaur ulang atau dijual ke pengepul</li>
+         <li>Dukung pemerintah desa untuk menyediakan fasilitas pengelolaan sampah yang memadai</li>
+         <li>Edukasi keluarga dan tetangga tentang bahaya pembakaran sampah bagi kesehatan</li>
+        </ul>
+       </div>
+       <p class="text-center italic text-emerald-700 font-semibold bg-emerald-50 p-4 rounded-xl">"Mari bersama-sama jaga kualitas udara di Ciambar dengan berhenti membakar sampah. Udara bersih adalah hak setiap makhluk hidup!"</p>
+      </div>
+     </div>
+    </article><!-- DETAIL ARTIKEL 2 - PENCEMARAN TANAH -->
+    <article id="article-2" class="hidden"><button onclick="showPage('artikel')" class="mb-4 text-emerald-600 hover:text-emerald-800 font-semibold">← Kembali ke Daftar Artikel</button>
+     <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+      <div class="bg-gradient-to-r from-amber-500 to-yellow-500 p-6 text-white"><span class="text-5xl">🗑️</span>
+       <h1 class="font-heading text-2xl font-bold mt-3">Dampak Membuang Sampah Sembarangan Terhadap Tanah</h1>
+       <div class="flex flex-wrap gap-4 mt-3 text-sm text-amber-100"><span>✍️ Maharani Sri R.S</span> <span>📍 Ciambar</span> <span>📅 Kamis, 5 Februari 2026</span>
+       </div>
+      </div>
+      <div class="p-6 space-y-4 text-gray-700 leading-relaxed"><!-- Tempat Foto -->
+       <img
+       src="c:\Users\DEMEN\Desktop\ARTIKELIPAS\img\sampah.jpg.jpeg"
+       alt="Foto Sampah Sembarangan"
+       class="w-full h-96 object-cover rounded-xl"
+       />
+       <p class="first-letter:text-4xl first-letter:font-bold first-letter:text-amber-600 first-letter:float-left first-letter:mr-2">Pencemaran tanah akibat sampah yang dibuang sembarangan merupakan masalah serius yang terjadi di berbagai wilayah di Indonesia, termasuk di daerah Ciambar tempat saya tinggal. Berdasarkan pengamatan langsung yang saya lakukan di lingkungan sekitar, banyak sekali ditemukan tumpukan sampah di pinggir jalan, lahan kosong, bahkan di area persawahan. Kondisi ini sangat memprihatinkan karena dapat merusak kesuburan tanah dan mengganggu ekosistem di sekitarnya.</p>
+       <p>Dalam pengamatan saya di Ciambar, jenis sampah yang paling banyak dibuang sembarangan adalah sampah plastik, seperti kantong kresek, botol minuman, bungkus makanan ringan, dan popok sekali pakai. Sampah-sampah ini sangat sulit terurai secara alami dan bisa bertahan di dalam tanah selama ratusan tahun. Selama proses penguraian yang sangat lama tersebut, sampah plastik akan melepaskan zat-zat kimia berbahaya yang meresap ke dalam tanah dan mencemari lapisan tanah yang subur.</p>
+       <p>Dampak dari pencemaran tanah akibat sampah sangat beragam dan semuanya merugikan. Pertama, tanah yang tercemar akan kehilangan kesuburannya sehingga tanaman sulit tumbuh dengan baik. Hal ini tentu sangat berpengaruh terhadap produktivitas pertanian di Ciambar yang mayoritas penduduknya adalah petani. Kedua, sampah yang membusuk di tanah dapat menjadi sarang berbagai jenis hama dan penyakit, seperti tikus, lalat, dan nyamuk yang dapat menyebarkan penyakit kepada manusia.</p>
+       <p>Selain dampak langsung terhadap tanah, kebiasaan membuang sampah sembarangan juga merusak keindahan dan kebersihan lingkungan. Pemandangan tumpukan sampah di berbagai sudut desa tentu sangat tidak sedap dipandang dan menimbulkan bau tidak sedap yang mengganggu kenyamanan warga. Kondisi ini juga dapat menurunkan nilai estetika desa dan menghambat potensi wisata yang mungkin bisa dikembangkan di daerah Ciambar.</p>
+       <p>Kebiasaan buruk membuang sampah sembarangan ini terjadi karena berbagai faktor. Kurangnya kesadaran masyarakat tentang dampak buruk pencemaran tanah menjadi penyebab utama. Banyak warga yang menganggap bahwa membuang satu atau dua bungkus sampah tidak akan berdampak besar, padahal jika dilakukan oleh banyak orang secara terus-menerus, dampaknya akan sangat signifikan. Faktor lainnya adalah minimnya tempat sampah dan fasilitas pengelolaan sampah yang tersedia di lingkungan.</p>
+       <p>Pencemaran tanah akibat sampah juga berdampak pada kualitas air tanah. Zat-zat berbahaya dari sampah yang meresap ke dalam tanah akan terbawa oleh air hujan dan mencemari sumber air tanah yang digunakan warga untuk kebutuhan sehari-hari. Dalam jangka panjang, konsumsi air yang tercemar dapat menyebabkan berbagai penyakit serius bagi manusia, termasuk gangguan pencernaan dan bahkan kanker.</p>
+       <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded-r-xl">
+        <h3 class="font-heading font-bold text-green-800 mb-2">🌱 Ajakan dan Solusi untuk Masyarakat:</h3>
+        <ul class="list-disc list-inside space-y-1 text-green-900">
+         <li>Biasakan membuang sampah pada tempatnya, bawa kantong plastik saat bepergian</li>
+         <li>Kurangi penggunaan plastik sekali pakai dan beralih ke bahan yang ramah lingkungan</li>
+         <li>Lakukan kerja bakti bersama warga untuk membersihkan lingkungan secara rutin</li>
+         <li>Tegur dengan sopan jika melihat orang membuang sampah sembarangan</li>
+         <li>Ajarkan anak-anak sejak dini tentang pentingnya menjaga kebersihan lingkungan</li>
+        </ul>
+       </div>
+       <p class="text-center italic text-emerald-700 font-semibold bg-emerald-50 p-4 rounded-xl">"Satu sampah yang dibuang pada tempatnya adalah satu langkah kecil untuk menjaga bumi. Mari mulai dari diri sendiri!"</p>
+      </div>
+     </div>
+    </article><!-- DETAIL ARTIKEL 3 - PENCEMARAN AIR -->
+    <article id="article-3" class="hidden"><button onclick="showPage('artikel')" class="mb-4 text-emerald-600 hover:text-emerald-800 font-semibold">← Kembali ke Daftar Artikel</button>
+     <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+      <div class="bg-gradient-to-r from-blue-500 to-cyan-500 p-6 text-white"><span class="text-5xl">💧</span>
+       <h1 class="font-heading text-2xl font-bold mt-3">Genangan Air di Jalanan: Tanda Pencemaran dan Masalah Drainase</h1>
+       <div class="flex flex-wrap gap-4 mt-3 text-sm text-blue-100"><span>✍️ Maharani Sri R.S</span> <span>📍 Ciambar</span> <span>📅 Kamis, 5 Februari 2026</span>
+       </div>
+      </div>
+      <div class="p-6 space-y-4 text-gray-700 leading-relaxed"><!-- Tempat Foto -->
+       <img
+       src="c:\Users\DEMEN\Desktop\ARTIKELIPAS\img\genanganair.jpg.jpeg"
+       alt="Foto Genangan Air di Jalan"
+       class="w-full h-96 object-cover rounded-xl"
+       />
+       <p class="first-letter:text-4xl first-letter:font-bold first-letter:text-blue-600 first-letter:float-left first-letter:mr-2">Pencemaran air merupakan masalah lingkungan yang semakin mengkhawatirkan di berbagai daerah, termasuk di Ciambar. Salah satu indikator yang paling mudah diamati adalah banyaknya genangan air di jalanan yang tidak kunjung surut, bahkan ketika hujan sudah lama berhenti. Fenomena ini menunjukkan adanya masalah serius pada sistem drainase dan pengelolaan air di lingkungan kita yang perlu segera ditangani oleh seluruh lapisan masyarakat.</p>
+       <p>Berdasarkan pengamatan yang saya lakukan di beberapa titik jalan di Ciambar, genangan air sering kali ditemukan berwarna keruh kecoklatan atau bahkan kehitaman dengan bau yang tidak sedap. Kondisi ini menandakan bahwa air tersebut telah tercemar oleh berbagai macam limbah, baik limbah rumah tangga maupun sampah yang terseret oleh aliran air. Genangan air yang tercemar ini bukan hanya mengganggu aktivitas warga, tetapi juga menjadi sumber penyakit yang berbahaya.</p>
+       <p>Penyebab utama terjadinya genangan air di jalanan Ciambar adalah tersumbatnya saluran drainase oleh sampah. Banyak warga yang masih memiliki kebiasaan buruk membuang sampah ke selokan atau saluran air, sehingga ketika hujan turun, air tidak dapat mengalir dengan lancar dan akhirnya meluap ke jalan. Sampah-sampah seperti plastik, daun, dan limbah rumah tangga menumpuk di saluran drainase dan menyebabkan penyumbatan yang parah.</p>
+       <p>Dampak dari genangan air yang tercemar sangat beragam dan semuanya merugikan masyarakat. Dari segi kesehatan, genangan air menjadi tempat berkembang biak yang ideal bagi nyamuk, terutama nyamuk Aedes aegypti yang menyebabkan penyakit demam berdarah. Selain itu, air genangan yang tercemar juga dapat menyebabkan penyakit kulit jika terkena kontak langsung dengan tubuh manusia. Anak-anak yang sering bermain di area genangan air sangat rentan terkena berbagai penyakit.</p>
+       <p>Dari segi infrastruktur, genangan air yang terus-menerus terjadi dapat merusak kondisi jalan dan memperpendek usia aspal. Jalan yang sering tergendam air akan cepat rusak dan berlubang, sehingga menimbulkan biaya perbaikan yang tidak sedikit. Selain itu, genangan air juga mengganggu aktivitas transportasi warga dan dapat menyebabkan kecelakaan lalu lintas, terutama bagi pengendara sepeda motor yang harus melewati genangan air yang dalam.</p>
+       <p>Masalah genangan air di Ciambar semakin diperparah oleh kurangnya perawatan saluran drainase secara berkala. Selokan dan parit yang seharusnya dibersihkan secara rutin sering kali dibiarkan begitu saja hingga penuh dengan sampah dan lumpur. Hal ini menunjukkan perlunya kesadaran bersama dari warga dan pemerintah desa untuk melakukan pemeliharaan sistem drainase secara teratur agar air hujan dapat mengalir dengan lancar.</p>
+       <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded-r-xl">
+        <h3 class="font-heading font-bold text-green-800 mb-2">🌱 Ajakan dan Solusi untuk Masyarakat:</h3>
+        <ul class="list-disc list-inside space-y-1 text-green-900">
+         <li>Jangan membuang sampah ke selokan atau saluran air apapun alasannya</li>
+         <li>Rutin membersihkan selokan di depan rumah masing-masing minimal seminggu sekali</li>
+         <li>Laporkan kepada RT/RW jika menemukan saluran drainase yang tersumbat parah</li>
+         <li>Ikut serta dalam gotong royong membersihkan saluran air di lingkungan</li>
+         <li>Buat lubang biopori atau sumur resapan untuk membantu penyerapan air hujan</li>
+        </ul>
+       </div>
+       <p class="text-center italic text-emerald-700 font-semibold bg-emerald-50 p-4 rounded-xl">"Air yang bersih dan mengalir lancar adalah cermin dari masyarakat yang peduli lingkungan. Mari jaga drainase bersama!"</p>
+      </div>
+     </div>
+    </article>
+   </main><!-- Footer -->
+   <footer class="bg-emerald-800 text-white py-6 mt-8">
+    <div class="max-w-5xl mx-auto px-4 text-center">
+     <div class="text-3xl mb-2">
+      🌍
+     </div>
+     <p class="font-heading font-bold">Pemerhati Lingkungan Ciambar</p>
+     <p class="text-emerald-200 text-sm mt-1">© 2026 - Dibuat dengan 💚 untuk Bumi yang Lebih Baik</p>
+     <p class="text-emerald-300 text-xs mt-2">Projek Kepedulian Lingkungan - Maharani Sri R.S</p>
+    </div>
+   </footer>
+  </div>
+  <script>
+    // Default configuration
+    const defaultConfig = {
+      site_title: 'Pemerhati Lingkungan Ciambar',
+      author_name: 'Maharani Sri R.S',
+      background_color: '#ecfdf5',
+      header_color: '#047857',
+      text_color: '#374151',
+      accent_color: '#10b981',
+      card_color: '#ffffff'
+    };
+
+    let config = { ...defaultConfig };
+
+    // Page navigation
+    function showPage(page) {
+      document.getElementById('page-beranda').classList.add('hidden');
+      document.getElementById('page-artikel').classList.add('hidden');
+      document.getElementById('article-1').classList.add('hidden');
+      document.getElementById('article-2').classList.add('hidden');
+      document.getElementById('article-3').classList.add('hidden');
+
+      if (page === 'beranda') {
+        document.getElementById('page-beranda').classList.remove('hidden');
+      } else if (page === 'artikel') {
+        document.getElementById('page-artikel').classList.remove('hidden');
+      }
+    }
+
+    function showArticle(num) {
+      document.getElementById('page-beranda').classList.add('hidden');
+      document.getElementById('page-artikel').classList.add('hidden');
+      document.getElementById('article-1').classList.add('hidden');
+      document.getElementById('article-2').classList.add('hidden');
+      document.getElementById('article-3').classList.add('hidden');
+
+      document.getElementById('article-' + num).classList.remove('hidden');
+    }
+
+    // Render function to update UI based on config
+    async function onConfigChange(cfg) {
+      const siteTitle = cfg.site_title || defaultConfig.site_title;
+      const authorName = cfg.author_name || defaultConfig.author_name;
+
+      document.getElementById('site-title').textContent = siteTitle;
+      document.getElementById('author-display').textContent = authorName;
+    }
+
+    // Map to capabilities for color editing
+    function mapToCapabilities(cfg) {
+      return {
+        recolorables: [
+          {
+            get: () => cfg.background_color || defaultConfig.background_color,
+            set: (value) => {
+              cfg.background_color = value;
+              window.elementSdk.setConfig({ background_color: value });
+            }
+          },
+          {
+            get: () => cfg.header_color || defaultConfig.header_color,
+            set: (value) => {
+              cfg.header_color = value;
+              window.elementSdk.setConfig({ header_color: value });
+            }
+          },
+          {
+            get: () => cfg.text_color || defaultConfig.text_color,
+            set: (value) => {
+              cfg.text_color = value;
+              window.elementSdk.setConfig({ text_color: value });
+            }
+          },
+          {
+            get: () => cfg.accent_color || defaultConfig.accent_color,
+            set: (value) => {
+              cfg.accent_color = value;
+              window.elementSdk.setConfig({ accent_color: value });
+            }
+          },
+          {
+            get: () => cfg.card_color || defaultConfig.card_color,
+            set: (value) => {
+              cfg.card_color = value;
+              window.elementSdk.setConfig({ card_color: value });
+            }
+          }
+        ],
+        borderables: [],
+        fontEditable: undefined,
+        fontSizeable: undefined
+      };
+    }
+
+    // Map to edit panel values
+    function mapToEditPanelValues(cfg) {
+      return new Map([
+        ['site_title', cfg.site_title || defaultConfig.site_title],
+        ['author_name', cfg.author_name || defaultConfig.author_name]
+      ]);
+    }
+
+    // Initialize SDK
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9cbbbe9971a8e778',t:'MTc3MDcyNzk1NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
